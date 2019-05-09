@@ -1,4 +1,4 @@
-<h1>Jeu de Labyrinthe McGyver</h1>
+<h1>Jeu du Labyrinthe McGyver</h1>
 <h2>Pourquoi ce programme?</h2>
 
 
