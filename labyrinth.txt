@@ -1,0 +1,15 @@
+XXXXXXXMXXXXXXX
+###############
+XXXX#XXXX#XXXXX
+###############
+XXXXXXX#XXXX#XX
+###############
+#XXXXXXX#XXXXXX
+###############
+XXX#XXXXXXXXXX#
+###############
+XXXXXXXXXX##XXX
+###############
+XXXXXX#XXXXX#XX
+###############
+XXXXXXXXAXXXXXX
