@@ -8,7 +8,7 @@ class Labyrinth :
         self.item = []
         self.start= None
         self.arrival = None
-        self.character = None
+        self.hero = None
         self.width = None
         self.height = None
 
@@ -26,29 +26,36 @@ class Labyrinth :
                     elif carac == "A":
                         self.arrival = Position(num_line,num_column)
                         self.gates.append(Position(num_line, num_column))
-                    self.width = num_column
+                    self.width = num_column 
                     self.height = num_line
         
 
     def generate_item_position(self):
         self.item = random.sample(self.gates, 3)
+        while self.start in self.item:
+            self.item = random.sample(self.gates, 3)
         return self.item
 
     def display(self):
-        for num_line in range(self.height+1):
-            for num_column in range(self.width+1):
-                if num_column == 14 : 
+        for num_line in range(self.height+2):
+            for num_column in range(self.width+2):
+                if num_column == 15 : 
                     print()
                 if Position(num_line, num_column) in self.item:
-                    print('O', end="")
-                elif Position(num_line,num_column) == self.character.position:
-                    print("M",end="")
+                    if Position(num_line,num_column) == self.hero.position:
+                        print(self.hero.name ,end="")
+                    elif Position(num_line,num_column) in self.hero.inventory:
+                        print("#",end="")
+                    else :
+                        print('O', end="")
+                elif Position(num_line,num_column) == self.hero.position:
+                    print(self.hero.name ,end="")
                 elif Position(num_line, num_column) in self.gates:
-                    print("#",end="")
+                    print(" ",end="")
                 elif Position(num_line, num_column) in self.walls:
                     print('X', end="")
         
 
 
 '''Il manque la méthode pour afficher le labyrinthe à chaque fois que le héros se déplace, il manque la classe Objet et Garde qui gère 
-l'ajout des trois objets à l'inventaire du character, l'endormissement du garde pour passer la porte'''
+l'ajout des trois objets à l'inventaire du hero, l'endormissement du garde pour passer la porte'''
