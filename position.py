@@ -7,22 +7,18 @@ class Position:
         
     
     def move_down(self):
-        self.x = self.x +1
-        return Position(self.x, self.y)
+        return Position(self.x+1, self.y)
        
     
     def move_up(self):
-        self.x = self.x -1
-        return Position(self.x, self.y)
+        return Position(self.x-1, self.y)
 
 
     def move_left(self):
-        self.y = self.y-1
-        return Position(self.x, self.y)
+        return Position(self.x, self.y-1)
     
     def move_right(self):
-        self.y = self.y +1
-        return Position(self.x, self.y)
+        return Position(self.x, self.y+1)
 
     def __add__(self, direction):
         if direction == "U":
